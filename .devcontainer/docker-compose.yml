@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  app:
+    container_name: spring-boot-sample
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../..:/workspaces:cached
+      - ~/.ssh:/home/vscode/.ssh
+    command: sleep infinity
+    network_mode: host

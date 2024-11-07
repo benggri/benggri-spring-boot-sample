@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: spring-boot-sample
+  r2dbc:
+    pool:
+      enabled: true
+      initial-size: 30
+      max-size: 50
+    databases:
+      datasource1:
+        url: r2dbc:postgresql://localhost:55432/first_database
+        username: sample
+        password: sample
+      datasource2:
+        url: r2dbc:postgresql://localhost:55432/second_database
+        username: sample
+        password: sample
+      datasource3:
+        url: r2dbc:postgresql://localhost:55432/third_database
+        username: sample
+        password: sample
+  sql:
+    init:
+      mode: never
+# Optionally configure logging
+logging:
+  level:
+    root: info
+    org.springframework.r2dbc: TRACE
+    org.springframework.web.reactive.function.client.ExchangeFunctions: TRACE
